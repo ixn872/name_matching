@@ -51,12 +51,7 @@ for i in zip(L1,L2):
 		Temp.append(0)
 		continue
 			
-#print(Temp)
 
-#print(Levenshtein.distance('nikol','nicole'))
-#x=Levenshtein.distance('nikol','nicole')
-#metric = float(x)/(len('nikol')+len('nicole')) #you want this close to 0
-#print(metric)
 
 data["isMatch"]=Temp
 data["similarities"]=similarities
