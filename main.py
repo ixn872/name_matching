@@ -4,6 +4,7 @@ import pandas as pd
 import difflib
 from difflib import SequenceMatcher as m
 import re
+from unidecode import unidecode
 
 data = pd.read_csv('name_mismatches.csv',names=['v1','v2'])
 
@@ -29,6 +30,8 @@ for i in zip(L1,L2):
 	
 	a=i[0]
 	b=i[1]
+	a=unidecode(a)
+	b=unidecode(b)
 	Levenshtein=distance(a,b)
 	custom_metric = Levenshtein/(len(a+b))
 	SeqM = m(None,a,b).ratio()
